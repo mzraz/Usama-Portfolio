@@ -1,0 +1,269 @@
+.case-studies {
+  padding: 80px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.case-studies-content {
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.5s ease;
+}
+
+/* Layout for initial state vs expanded state */
+.case-studies-content:not(.expanded) {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+}
+
+.case-studies-content.expanded .case-studies-heading {
+  display: none;
+}
+
+.case-studies-heading {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40rem;
+  text-transform: uppercase;
+  font-weight: 300;
+
+}
+
+.text-white{
+  color: white !important
+}
+
+.text-orange{
+  color: #FF8C00
+}
+.case-text {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.studies-text {
+  color: #fff;
+  font-size: 4rem;
+
+}
+
+.slider-container {
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.case-study-item {
+  padding: 0 15px;
+  flex-shrink: 0;
+}
+
+.case-study-card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-image {
+  overflow: hidden;
+  height: 220px;
+  position: relative;
+}
+
+.case-study-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: grayscale(1);
+}
+
+.case-study-card:hover .case-study-image img {
+  transform: scale(1.05);
+  filter: grayscale(0);
+}
+
+.case-study-content {
+  padding: 20px 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.case-study-content p {
+  color: #aaa;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.case-study-link {
+  color: #FF8C00;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.case-study-link:hover {
+  text-decoration: underline;
+}
+
+.arrow-icon {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.case-study-link:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  color: #FF8C00
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-primary {
+  background-color: #FF8C00;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (max-width: 992px) {
+  .case-studies-content:not(.expanded) {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .case-studies-content.expanded .slider-container,
+  .case-studies-content:not(.expanded) .slider-container {
+    width: 100%;
+  }
+  
+  .slider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .slider-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .case-study-item {
+    padding: 0 10px;
+  }
+  
+  .slider-btn {
+    top: auto;
+    bottom: -50px;
+    transform: none;
+  }
+  
+  .prev-btn {
+    left: calc(50% - 40px);
+  }
+  
+  .next-btn {
+    right: calc(50% - 40px);
+  }
+  
+  .view-all-container {
+    margin-top: 70px;
+  }
+}
